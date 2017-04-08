@@ -1,0 +1,81 @@
+<div class="container">
+<div class="row">
+  <div class="col-xs-8" style="height:40%;width:70%">
+    <div class="col-md-12" style="background:#237da3; height: 60px;;border-radius:10px; border-color:black;font-family:serif">
+      <h3 style="margin-left:20px;margin-top:20px">
+      Your details
+    </h3></div>
+    <br><br/>
+    <form role="form">
+      <div class="form-group" style="margin-top:20px">
+        <br>
+        <input type="text" placeholder="Henry" class="form-control" id="name" name="name" style="width:25%;display:inline"/>
+        <input type="email" placeholder="abc@xyz.com" class="form-control" id="emailid" name="emailid" style="width:45%;display:inline"/>
+        <input type="text" placeholder="9945678902" class="form-control" id="phoneno" name="phoneno" maxlength="10" style="width:25%;display:inline" />
+      </div>
+      <div class="col-md-12" style="background:#237da3; height: 60px;;border-radius:10px; border-color:black;font-family:serif">
+      <h3 style="margin-left:20px;margin-top:20px">
+      Payment Details
+    </h3></div>
+    <br>
+    <div style="padding-left:130px;padding-top:60px">
+    <div class="jumbotron" style="height:80%;width:80%">
+      <div class="form-group">
+      <label for="cno" style="color:gray">
+          Card Number
+        </label>
+        <input type="text" class="form-control" id="cno" placeholder="1234-5678-9999-0000" maxlength="16" minlength="16"/>
+      </div>
+      <div class="form-group">
+        <label for="name" style="color:gray">
+          Name on the card
+        </label>
+        <input type="text" class="form-control" id="name" placeholder="Henry"/>
+      </div>
+      <div class="form-group">
+        <label for="mm" style="color:gray;display:inline">
+          Expiry
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="cvv" style="color:gray">
+          CVV
+        </label><br/>
+        <input type="number" min="1" max="12" class="form-control" id="mm" style="width:65px;display:inline" maxlength="3" placeholder="mm"/>
+        <input type="number" id="yy" min="2017" max="2027" class="form-control" maxlength="4" style="width:75px;display:inline" placeholder="yy"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="password" minlength="3" maxlength="3" id="cvv" length="3" class="form-control" style="width:75px;display:inline" placeholder="CVV"/>
+      </div>
+  </div>
+  <div class="form-group">
+  <button ng-click="confirm()" class="btn btn-danger">
+    Make Payment
+  </button>
+</div>
+</form>
+<p style="color:gray">By clicking on Make Payment you will be redirected to a secure payment gateway</p>
+    </div>
+  </div>
+  <div class="col-xs-4 well" style="height:70%;width:30%;margin-top:22px">
+    <div class="col-md-12" style="background:#237da3; height: 60px;;border-radius:10px; border-color:black;font-family:serif">
+      <h3 style="margin-left:20px;margin-top:20px">Order Summary</h3>
+  </div>
+    <hr/><br/>
+    <h4><b style="font-family: Georgia;text-align:center">Movie Name : </b> {{movieName}}
+    <br/><br>
+    <b style="font-family: Georgia;text-align:center">Theatre :</b> {{movieTheatre}}
+    <br/><br>
+    <b style="font-family: Georgia;text-align:center">Seat Numbers :</b>  {{movieSeats1}}
+    <br/><br>
+    <b style="font-family: Georgia;text-align:center">Date :</b>  {{movieDate}}
+    <br/><br>
+    <b style="font-family: Georgia;text-align:center">Show time :</b>  {{movieShow}}
+    <hr/>
+    <b style="font-family: Georgia;text-align:center">Net Payable Amount<b style="color:red">*</b> :</b> {{movieAmount}}
+  </h4>
+  <br>
+  <p style="font-size: 80%"><b style="color:red">*</b>Exclusive of Internet handling charges</p>
+
+  </div>
+  </div>
+</div>

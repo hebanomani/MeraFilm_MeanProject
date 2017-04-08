@@ -1,0 +1,162 @@
+<div class="carousel slide" id="carousel-265580" data-ride="carousel" data-interval="1700">
+  <ol class="carousel-indicators">
+    <li class="active" data-slide-to="0" data-target="#carousel-265580">
+    </li>
+    <li data-slide-to="1" data-target="#carousel-265580">
+    </li>
+    <li data-slide-to="2" data-target="#carousel-265580">
+    </li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img alt="Carousel Bootstrap First" src="./public/images/carousel1.jpg" height="50px" >
+      <div class="carousel-caption">
+        <h4>
+          Gangster Squad
+        </h4>
+      </div>
+    </div>
+    <div class="item">
+      <img alt="Carousel Bootstrap Second" src="./public/images/carousel2.jpg" height="50px">
+      <div class="carousel-caption">
+        <h4>
+          Inception
+        </h4>
+      </div>
+    </div>
+    <div class="item">
+      <img alt="Carousel Bootstrap Third" src="./public/images/carousel3.jpg" height="50px">
+      <div class="carousel-caption">
+        <h4>
+          The Dark Knight Rises
+        </h4>
+      </div>
+    </div>
+  </div> <a class="left carousel-control" href="#carousel-265580" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-265580" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+</div>
+</div>
+<br><hr>
+<div class="row">
+<div class="col-md-12">
+  <!-- <div class="col-md-12" style="background:#237da3; height: 70px;;border-radius:10px; border-color:black;font-family:serif">
+
+  <center>
+
+  <h3><strong>Now Showing</strong></h3>
+</center>
+</div> -->
+
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home"><b style="font-family:serif;color: #237da3237da3;font-size: 200%">Now Showing</b></a></li>
+  <li><a data-toggle="tab" href="#menu1"><b style="font-family:serif;color: #237da3237da3;font-size: 200%">Upcoming</b></a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <div class="row">
+            <div class="thumbnail">
+
+          <div class="row" style="background:Seashell">
+              <div class="col-lg-12">
+              <div class="row">
+                <hr>
+                <br>
+                <center>
+              <div class="col-lg-3" ng-repeat="m in movieData | filter : {status:'true'}">
+              <img src="{{m.Poster}}" alt="POSTER"  width="220" height="350"  >
+              <div class="booktab">
+            <b style="font-size: 150%"><p style="font-family: Georgia">{{m.Title}}</p></b>
+            <span class="label label-primary" style="font-size: 90%">{{m.Genre}}</span></div>
+
+            <p>IMDB Rating : <span class="label label-primary" style="font-size: 75%">{{m.imdbRating}}</span><br/></p>
+                <br>
+              <button ng-click="setMovie(m.Title)" class="btn btn-info btn-lg">Book</button>
+              <br><hr>
+                </div>
+              </center>
+                  </div>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+
+                  </div>
+                </div>
+
+        </div>
+    </div>
+
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <div class="row">
+            <div class="thumbnail">
+
+          <div class="row" style="background:Seashell">
+              <div class="col-lg-12">
+              <div class="row">
+                <hr>
+                <br>
+                <center>
+              <div class="col-lg-3" ng-repeat="m in movieData | filter : {status:'false'}">
+              <img src="{{m.Poster}}" alt="POSTER"  width="220" height="350"  >
+
+            <b style="font-size: 150%"><p style="font-family: Georgia">{{m.Title}}</p></b>
+            <span class="label label-primary" style="font-size: 90%">{{m.Genre}}</span>
+
+            <p>IMDB Rating : <span class="label label-primary" style="font-size: 75%">{{m.imdbRating}}</span><br/></p>
+                <br>
+          <!-- <button ng-click="setMovie(m.Title)" class="btn btn-info">Book</button> -->
+<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">More Detail</button>
+
+<div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog">
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <!-- <h4 class="modal-title">{{m.Title}}</h4> -->
+  </div>
+  <div class="modal-body">
+    <b style="font-size: 150%">{{m.Title}}</b></br>
+    <br>
+  <b style="font-size: 120%;font-family : Verdana;color: #237da3">Actors : </b><i style="font-size: 100%">{{m.Actors}}</i><br/><br/>
+  <b style="font-size: 120%;font-family : Verdana;color: #237da3">Director : </b><i style="font-size: 100%">{{m.Director}}</i><br/><br/>
+  <b style="font-size: 120%;font-family : Verdana;color: #237da3">Runtime : </b>{{m.Runtime}}<br/><br/>
+  <b style="font-size: 120%;font-family : Verdana;color: #237da3">Plot : </b><i style="font-size: 100%">{{m.Plot}}</i></p>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>
+
+</div>
+</div>
+
+              <br><hr>
+                </div>
+              </center>
+                  </div>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+
+                  </div>
+                </div>
+
+        </div>
+    </div>
+
+  </div>
+
+  </div>
+
+</div>
+</div>
+<br>
+<hr>

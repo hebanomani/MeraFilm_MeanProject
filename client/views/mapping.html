@@ -1,0 +1,127 @@
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+ -->
+<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js "></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.js"></script> -->
+
+<!-- <script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+
+<div class="container">
+ <div class="row">
+   <div class="col-md-12" style="background:#237da3; height: 70px;;border-radius:10px; border-color:black;font-family:serif">
+     <h1>Enter the details to be inserted</h1>
+   </div>
+ <div class="col-lg-12">
+   <table height="100%" width="100%" class="table jumbotron table-condensed table-bordered">
+     <tr><td style="font-family: Georgia;text-align:center"><font color="#237da3">
+   Movie Name
+ </font>
+ </td>
+ <td colspan="2">
+   <div>
+<select ng-model="mapping.Title">
+  <option ng-repeat="o in movieData" value="{{o.Title}}">{{o.Title}}</option>
+</select>
+</div>
+ </td></tr>
+   <tr><td style="font-family: Georgia;text-align:center"><font color="#237da3">
+   City
+ </font>
+ </td>
+ <td colspan="2">
+   <select ng-model="mapping.City">
+       <!-- <option ng-repeat="c in theatreData | unique: c.city" value="{{o.city}}">{{c.city}}</option> -->
+        <option  ng-repeat="t in theatreData | unique: 'city'" value="{{t.city}}">{{t.city}}</option>
+   </select>
+ </td></tr>
+<tr><td style="font-family: Georgia;text-align:center"><font color="#237da3">
+   Theatre
+ </font>
+ </td>
+ <td colspan="2">
+<select ng-model="mapping.Theatre">
+ <option  ng-repeat="t in theatreData | filter :mapping.City">{{t.th_nm}}</option>
+ <!-- <option  ng-repeat="t in theatreData | filter :mapping.City">{{t.city}}</option> -->
+
+</select>
+</td></tr>
+<tr>
+ <td style="font-family: Georgia;text-align:center"><font color="#237da3">Date</font></td>
+ <td colspan="2"><input ng-model="mapping.ShowDate" type="text" id="myDate" name="myDate"></td>
+</tr>
+<tr>
+ <td style="font-family: Georgia;text-align:center"><font color="#237da3">Show timings</font></td>
+ <td>
+   <select id="hh">
+     <option value="01">01</option>
+     <option value="02">02</option>
+     <option value="03">03</option>
+     <option value="04">04</option>
+     <option value="05">05</option>
+     <option value="06">06</option>
+     <option value="07">07</option>
+     <option value="08">08</option>
+     <option value="09">09</option>
+     <option value="10">10</option>
+     <option value="11">11</option>
+     <option value="12">12</option>
+   </select>
+   <select id="mm">
+     <option value="00">00</option>
+     <option value="05">05</option>
+     <option value="10">10</option>
+     <option value="15">15</option>
+     <option value="20">20</option>
+     <option value="25">25</option>
+     <option value="30">30</option>
+     <option value="35">35</option>
+     <option value="40">40</option>
+     <option value="45">45</option>
+     <option value="50">50</option>
+     <option value="55">55</option>
+   </select>
+   <select id="t" >
+     <option value="am">am</option>
+     <option value="pm">pm</option>
+   </select>
+   <button id="add">Add</button></td>
+   <td>  <select id="res" multiple></select>
+   </td>
+ </tr>
+</table>
+</div>
+</div>
+<div class="row">
+ <div class="col-xs-12" style="height:30px"></div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+<button ng-click="insertMapping()" class="btn btn-success btn-lg" style="padding: 10px 50px"><span class="glyphicon glyphicon-plus"></span> ADD MAPPING</button>
+</div>
+</div>
+<div class="row" style="margin-top:20px">
+ <div class="col-lg-12">
+
+</div>
+ <div class="col-lg-12">
+   <table class="table table-bordered table-hover">
+     <tr>
+       <th style="font-family: Georgia;text-align:center"><font color="#237da3">Title</font></th>
+       <th style="font-family: Georgia;text-align:center"><font color="#237da3">City</font></th>
+       <th style="font-family: Georgia;text-align:center"><font color="#237da3">Theatre</font></th>
+       <th style="font-family: Georgia;text-align:center"><font color="#237da3">Date</font></th>
+       <th style="font-family: Georgia;text-align:center"><font color="#237da3">Show Timings</font></th>
+       <th style="font-family: Georgia;text-align:center"><font color="#237da3">Delete</font></th>
+     </tr>
+       <tr ng-repeat="s in mappingData | filter : mapping.Theatre">
+         <td style="font-family: Georgia;text-align:center">{{s.Title}}</td>
+         <td style="font-family: Georgia;text-align:center">{{s.City}}</td>
+         <td style="font-family: Georgia;text-align:center">{{s.Theatre}}</td>
+         <td style="font-family: Georgia;text-align:center">{{s.ShowDate}}</td>
+         <td style="font-family: Georgia;text-align:center"><span ng-repeat="i in s.ShowTimings">{{i}}<br/></span></td>
+         <td style="font-family: Georgia;text-align:center"><button ng-click="deleteMapping(s)" class="btn btn-danger" onclick="this.parentElement.style.display='none';">DELETE  <span class="glyphicon glyphicon-remove"></span></button></td>
+       </tr>
+     </table>
+   </div>
+ </div>
+</div>
